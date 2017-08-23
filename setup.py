@@ -13,6 +13,7 @@ setup(
     install_requires=[
         'phonenumbers >= 5.9b1',
         'babel >= 1.3',
+        'future >= 0.16.0'
     ],
     long_description=open('README.rst').read(),
     author='Stefan Foulis',

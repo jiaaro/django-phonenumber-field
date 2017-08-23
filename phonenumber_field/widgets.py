@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from __future__ import unicode_literals
 
 from babel import Locale
 
@@ -25,7 +26,7 @@ class PhonePrefixSelect(Select):
             lang_code = "en-us"
 
         locale = Locale.parse(lang_code, sep='-')
-        for prefix, values in _COUNTRY_CODE_TO_REGION_CODE.iteritems():
+        for prefix, values in _COUNTRY_CODE_TO_REGION_CODE.items():
             prefix = '+%d' % prefix
             
             if initial and initial in values:
@@ -34,7 +35,7 @@ class PhonePrefixSelect(Select):
             for i, country_code in enumerate(values):
                 country_name = locale.territories.get(country_code)
                 if country_name:
-                    opt = (prefix, u'%s %s' % (country_name, prefix))
+                    opt = (prefix, '%s %s' % (country_name, prefix))
                     if i == 0:
                         choices.append(opt)
                     else:
